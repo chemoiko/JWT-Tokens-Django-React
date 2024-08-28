@@ -48,10 +48,10 @@ This project demonstrates the integration of JWT (JSON Web Tokens) for authentic
    ```python manage.py runserver
    The Django backend should now be running on http://127.0.0.1:8000/.
 
-##Backend JWT Configuration
+## Backend JWT Configuration
    In settings.py, configure djangorestframework-simplejwt by adding the following:
    
-   python
+   ```python
    Copy code
    INSTALLED_APPS = [
        ...
@@ -65,8 +65,8 @@ This project demonstrates the integration of JWT (JSON Web Tokens) for authentic
        ),
    }
    Ensure that your API endpoints are protected using the @permission_classes decorator where needed.
-
-##Frontend Setup (React)
+```
+## Frontend Setup (React)
    
 1. **Navigate to the frontend directory:**
    ```cd ../frontend**
@@ -81,18 +81,18 @@ This project demonstrates the integration of JWT (JSON Web Tokens) for authentic
 
 
 
-##Usage
-   Register a new user: Go to the registration page in the React app and create a new account. Upon successful registration, you will be redirected to the    login page.
+## Usage
+1. **Register a new user: Go to the registration page in the React app and create a new account. Upon successful registration, you will be redirected to the    login page.**
    
-   Login: Use your credentials to log in. The application will obtain a JWT token from the backend and store it in the browser's local storage.
+2. **Login: Use your credentials to log in. The application will obtain a JWT token from the backend and store it in the browser's local storage.**
    
-   View Notes: Once authenticated, the notes page will display a list of notes fetched from the backend. You can only access this page if you are logged in.
+3. **View Notes: Once authenticated, the notes page will display a list of notes fetched from the backend. You can only access this page if you are logged in.**
    
-   Logout: Log out from the application, which clears the JWT token from local storage and redirects you to the login page.
+4. **Logout: Log out from the application, which clears the JWT token from local storage and redirects you to the login page.**
 
-##API Endpoints
+## API Endpoints
    Authentication
-   POST /api/token/ - Obtain JWT token (login)
+   ```POST /api/token/ - Obtain JWT token (login)
    POST /api/token/refresh/ - Refresh expired JWT token
    POST /api/register/ - Register a new user
    Notes
@@ -101,10 +101,11 @@ This project demonstrates the integration of JWT (JSON Web Tokens) for authentic
    Invalid Token: If you receive an "Invalid token" error, try refreshing your token or logging in again.
    
    CORS Issues: Ensure that CORS is properly configured in your Django settings for development:
-
-##Cors headers setup in settings.py
-```INSTALLED_APPS += ['corsheaders']
-
-MIDDLEWARE += ['corsheaders.middleware.CorsMiddleware']
-
-CORS_ALLOW_ALL_ORIGINS = True
+```
+## Cors headers setup in settings.py
+```
+   INSTALLED_APPS += ['corsheaders']
+   
+   MIDDLEWARE += ['corsheaders.middleware.CorsMiddleware']
+   
+   CORS_ALLOW_ALL_ORIGINS = True
